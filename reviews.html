@@ -47,6 +47,9 @@
   footer { background: var(--dark); color: var(--mid-gray); text-align: center; padding: 28px; font-size: 12px; letter-spacing: 0.04em; }
   footer span { color: var(--gold); }
   @media (max-width: 768px) { .reviews-grid { grid-template-columns: 1fr; padding: 40px 24px 60px; } nav { padding: 16px 24px; } nav ul { gap: 20px; } }
+
+  
+
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESM99WKL8S"></script>
@@ -55,6 +58,12 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-ESM99WKL8S');
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("apIPZZzMnqSyneKAZ");
+  })();
 </script>
 </head>
 <body>
@@ -76,10 +85,12 @@
   <div class="section-divider"></div>
 </div>
 
-<div class="reviews-grid">
-  <div class="testimonial">
-    <p class="placeholder">Add a LinkedIn recommendation or colleague quote here.</p>
-  </div>
+
+<div style="text-align:center; padding: 60px 48px 100px; max-width: 600px; margin: 0 auto;">
+  <p style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--dark); margin-bottom: 12px;">Reviews coming soon.</p>
+  <p style="font-size: 14px; color: var(--mid-gray); line-height: 1.8;">If you've worked with Christy and would like to leave a review, reach out directly.</p>
+</div>
+
   <div class="testimonial">
     <p class="placeholder">Add a LinkedIn recommendation or colleague quote here.</p>
   </div>
@@ -90,6 +101,8 @@
     <p class="placeholder">Add a LinkedIn recommendation or colleague quote here.</p>
   </div>
 </div>
+
+
 
 <footer>
   <p>© 2026 <span>Christy McSwain</span> · christymcswain.pro</p>
