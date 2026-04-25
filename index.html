@@ -516,6 +516,53 @@
   }
 
   /* RESPONSIVE */
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    background: var(--dark);
+    transition: all 0.3s;
+    display: block;
+  }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 57px;
+    left: 0;
+    right: 0;
+    background: rgba(247, 244, 239, 0.98);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--warm-gray);
+    padding: 20px 48px;
+    z-index: 99;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    text-decoration: none;
+    color: var(--charcoal);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--warm-gray);
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+  @media (max-width: 640px) {
+    nav ul { display: none; }
+    .hamburger { display: flex; }
+  }
+
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 40px; }
     .hero-image { order: -1; }
@@ -547,7 +594,22 @@
     <li><a href="reviews.html">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#projects" onclick="toggleMenu()">Portfolio</a>
+  <a href="#skills" onclick="toggleMenu()">Skills</a>
+  <a href="#certifications" onclick="toggleMenu()">Certs</a>
+  <a href="reviews.html" onclick="toggleMenu()">Reviews</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+<script>
+function toggleMenu() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+</script>
 
 <!-- HERO -->
 <div style="max-width:1200px;margin:0 auto;">
