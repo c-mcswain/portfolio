@@ -194,6 +194,24 @@
   @media (max-width: 480px) {
     .review-form { padding: 28px 20px; }
   }
+
+  .form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--warm-gray);
+    border-radius: 2px;
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    transition: border-color 0.2s;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  .form-group select:focus { border-color: var(--gold); }
+
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESM99WKL8S"></script>
@@ -228,6 +246,17 @@
         <input type="text" id="from_name" placeholder="Jane Smith" required>
       </div>
       <div class="form-group">
+        <label>How would you like to be credited? <span class="optional">(optional)</span></label>
+        <select id="credit_preference">
+          <option value="" disabled selected>Select a preference</option>
+          <option value="Full name">Full name</option>
+          <option value="First name and last initial">First name and last initial</option>
+          <option value="First name only">First name only</option>
+          <option value="Initials only">Initials only</option>
+          <option value="Anonymous">Anonymous</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label>Your Email <span class="optional">(optional)</span></label>
         <input type="email" id="email" placeholder="jane@example.com">
       </div>
@@ -238,6 +267,15 @@
       <div class="form-group">
         <label>Your Review</label>
         <textarea id="message" placeholder="Share your experience working with Christy..." required></textarea>
+      </div>
+      <div class="form-group">
+        <label>Would you be open to being contacted as a professional reference if needed? <span class="optional">(optional)</span></label>
+        <select id="open_to_reference">
+          <option value="" disabled selected>Select an option</option>
+          <option value="Yes">Yes</option>
+          <option value="Maybe">Maybe</option>
+          <option value="No">No</option>
+        </select>
       </div>
       <button class="form-submit" onclick="submitReview()">Submit Review</button>
     </div>
@@ -264,6 +302,8 @@ function submitReview() {
     from_name: name,
     email: document.getElementById('email').value.trim() || 'Not provided',
     relationship: document.getElementById('from_relationship').value.trim() || 'Not specified',
+    credit_preference: document.getElementById('credit_preference').value || 'Not specified',
+    open_to_reference: document.getElementById('open_to_reference').value || 'Not specified',
     message: message
   };
 
