@@ -1,102 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kind Words | Christy McSwain</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --cream: #F7F4EF;
-    --warm-gray: #E8E3DA;
-    --mid-gray: #9A9088;
-    --dark: #2C2825;
-    --charcoal: #4A4540;
-    --gold: #C4943A;
-    --gold-light: #D4A84B;
-    --gold-pale: #F0E0BC;
-    --white: #FFFFFF;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--cream); color: var(--dark); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
-  nav {
-    position: fixed; top: 0; width: 100%;
-    background: rgba(247, 244, 239, 0.92);
-    backdrop-filter: blur(8px); z-index: 100;
-    border-bottom: 1px solid var(--warm-gray);
-    padding: 16px 48px;
-    display: flex; justify-content: space-between; align-items: center;
+
+  .review-cta {
+    max-width: 760px;
+    margin: 0 auto 72px;
+    padding: 28px 48px 0;
+    text-align: center;
   }
-  nav .logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: var(--dark); letter-spacing: 0.02em; text-decoration: none; }
-  nav ul { list-style: none; display: flex; gap: 36px; }
-  nav ul a { text-decoration: none; color: var(--charcoal); font-size: 13px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
-  nav ul a:hover, nav ul a.active { color: var(--gold); }
-  .page-header { padding: 160px 48px 80px; text-align: center; }
-  .section-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 12px; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 600; color: var(--dark); margin-bottom: 16px; }
-  .section-sub { color: var(--mid-gray); font-size: 15px; max-width: 480px; margin: 0 auto; }
-  .section-divider { width: 60px; height: 2px; background: var(--gold); margin: 32px auto 0; }
-  .reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1000px; margin: 0 auto; padding: 60px 48px 100px; }
-  .testimonial { background: var(--white); border-radius: 4px; padding: 36px; position: relative; border: 1px solid var(--warm-gray); transition: box-shadow 0.2s; }
-  .testimonial:hover { box-shadow: 0 8px 32px rgba(44,40,37,0.08); }
-  .testimonial::before { content: '\201C'; font-family: 'Playfair Display', serif; font-size: 64px; color: var(--gold-pale); position: absolute; top: 12px; left: 24px; line-height: 1; }
-  .testimonial-text { font-size: 14px; color: var(--charcoal); line-height: 1.8; margin-top: 24px; font-style: italic; }
-  .testimonial-author { margin-top: 20px; font-size: 13px; font-weight: 500; color: var(--dark); }
-  .testimonial-role { font-size: 12px; color: var(--mid-gray); margin-top: 2px; }
-  .placeholder { text-align: center; color: var(--mid-gray); font-style: italic; font-size: 14px; margin-top: 24px; }
-  footer { background: var(--dark); color: var(--mid-gray); text-align: center; padding: 28px; font-size: 12px; letter-spacing: 0.04em; }
-  footer span { color: var(--gold); }
-  
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 4px;
+
+  .review-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.4vw, 30px);
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 10px;
   }
-  .hamburger span {
-    width: 24px;
-    height: 2px;
-    background: var(--dark);
-    transition: all 0.3s;
-    display: block;
-  }
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 57px;
-    left: 0;
-    right: 0;
-    background: rgba(247, 244, 239, 0.98);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--warm-gray);
-    padding: 20px 48px;
-    z-index: 99;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a {
-    text-decoration: none;
-    color: var(--charcoal);
+
+  .review-cta p {
+    color: var(--mid-gray);
     font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--warm-gray);
-    transition: color 0.2s;
+    line-height: 1.65;
+    margin: 0 auto 22px;
+    max-width: 560px;
   }
-  .mobile-menu a:hover { color: var(--gold); }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  footer {
+    background: var(--dark);
+    color: var(--mid-gray);
+    text-align: center;
+    padding: 28px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  footer span { color: var(--gold); }
+
+  @media (max-width: 820px) {
+    .featured-review, .reviews-grid { grid-template-columns: 1fr; }
+    .featured-review { gap: 14px; }
+  }
+
   @media (max-width: 640px) {
+    nav { padding: 16px 24px; }
     nav ul { display: none; }
     .hamburger { display: flex; }
+    .mobile-menu { padding: 18px 24px; }
+    .page-header { padding: 94px 24px 28px; }
+    .section-title { font-size: clamp(32px, 12vw, 42px); }
+    .review-shell { padding: 0 24px 46px; }
+    .featured-review, .testimonial { padding: 22px 20px; }
+    .review-cta { padding: 16px 24px 0; margin-bottom: 52px; }
+    .cta-actions { justify-content: stretch; }
+    .cta-actions a { text-align: center; }
   }
-
-  @media (max-width: 768px) { .reviews-grid { grid-template-columns: 1fr; padding: 40px 24px 60px; } nav { padding: 16px 24px; } nav ul { gap: 20px; } }
-
-  
-
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESM99WKL8S"></script>
@@ -105,12 +67,6 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-ESM99WKL8S');
-</script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function(){
-    emailjs.init("apIPZZzMnqSyneKAZ");
-  })();
 </script>
 </head>
 <body>
@@ -140,38 +96,59 @@ function toggleMenu() {
 }
 </script>
 
-<div class="page-header">
+<header class="page-header">
   <p class="section-label">Testimonials</p>
   <h1 class="section-title">Kind Words</h1>
-  <p class="section-sub">What colleagues, managers, and customers have said about working with me.</p>
-  <div class="section-divider"></div>
-</div>
+  <p class="section-sub">Real notes from colleagues and collaborators about how I show up under pressure, communicate across teams, and keep customer work moving.</p>
+</header>
 
+<main>
+  <section class="review-shell" aria-label="Reviews">
+    <article class="featured-review">
+      <div>
+        <span class="review-kicker">Featured Review</span>
+        <h2 class="featured-title">Steady under pressure, clear with people, and focused on better process.</h2>
+        <p class="review-author">M.P</p>
+        <p class="review-role">Former Colleague</p>
+      </div>
+      <div class="review-text">
+        <p>When high-pressure incidents came up, Christy remained composed, quickly assessed priorities, and coordinated responses that minimized disruption. Her ability to communicate clearly under stress helped our team focus and act decisively.</p>
+        <p>Christy handled tense interactions with professionalism and empathy, defusing conflict while preserving relationships with both clients and internal stakeholders, while maintaining alignment with organizational goals.</p>
+        <p>Christy is an exceptional mentor. As my senior she provided clear guidance, constructive feedback, and tailored learning opportunities.</p>
+        <p>Christy regularly reviewed workflows, surfaced bottlenecks, and led pragmatic process changes that measurably improved workflows and reduced errors.</p>
+        <p>Overall, Christy's combination of steady leadership, people skills, and process focus has led to faster incident resolution, higher team morale, and measurable operational gains. Anyone would be lucky to work with Christy, her guidance and encouragement absolutely made a lasting impact on me.</p>
+      </div>
+    </article>
 
-<div class="reviews-grid" style="max-width: 900px; margin: 0 auto; padding: 0 48px 100px;">
-  <div class="testimonial">
-    <p class="testimonial-text">"I had a very positive experience working with Christy. We were colleagues on a SaaS customer support team. Christy excelled in customer interactions. She has a strong customer-focused skill set, including empathy, problem-solving, and persistence. I remember a specific instance when Christy was handling a case outside of her normal scope, but rather than transfer it (which would extend the client's wait time and create a negative experience) she made the extra effort to identify the proper expert and meet with them to obtain the resolution. Christy is also organized and efficient. Additionally, she was a joy to work with. I always appreciated her passion and her humor."</p>
-    <p class="testimonial-author">Jaime Cohen Gaines</p>
-    <p class="testimonial-role">Former Colleague</p>
-    <p style="font-size: 11px; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 6px;">Available as a reference</p>
-  </div>
-  <div class="testimonial">
-    <p class="testimonial-text">"Working with Christy, both directly and indirectly, was nothing less than an absolute pleasure. Her positive attitude, attention to detail and commitment to the work was endlessly essential to the success of any team she was a part of. I always knew her to be proactive and unafraid of new challenges and opportunities. Her workplace prowess can only be outshined by what an exceptional person she is overall. Along with her patience, her abilities to learn and adapt make her an asset to any endeavor. I have met few individuals as versatile and dedicated as Christy and I have no doubt that she will maintain her consistency in this."</p>
-    <p class="testimonial-author">I.R</p>
-    <p class="testimonial-role">Former Colleague</p>
-  </div>
-  <div class="testimonial">
-    <p class="testimonial-text">"When high-pressure incidents came up, Christy remained composed, quickly assessed priorities, and coordinated responses that minimized disruption. Her ability to communicate clearly under stress helped our team focus and act decisively.<br><br>Christy handled tense interactions with professionalism and empathy, defusing conflict while preserving relationships with both clients and internal stakeholders, while maintaining alignment with organizational goals.<br><br>Christy is an exceptional mentor. As my senior she provided clear guidance, constructive feedback, and tailored learning opportunities.<br><br>Christy regularly reviewed workflows, surfaced bottlenecks, and led pragmatic process changes that measurably improved workflows and reduced errors.<br><br>Overall, Christy's combination of steady leadership, people skills, and process focus has led to faster incident resolution, higher team morale, and measurable operational gains. Anyone would be lucky to work with Christy, her guidance and encouragement absolutely made a lasting impact on me."</p>
-    <p class="testimonial-author">M.P</p>
-    <p class="testimonial-role">Former Colleague</p>
-  </div>
-</div>
+    <div class="reviews-grid">
+      <article class="testimonial">
+        <div class="review-text">
+          <p>I had a very positive experience working with Christy. We were colleagues on a SaaS customer support team. Christy excelled in customer interactions. She has a strong customer-focused skill set, including empathy, problem-solving, and persistence. I remember a specific instance when Christy was handling a case outside of her normal scope, but rather than transfer it (which would extend the client's wait time and create a negative experience) she made the extra effort to identify the proper expert and meet with them to obtain the resolution. Christy is also organized and efficient. Additionally, she was a joy to work with. I always appreciated her passion and her humor.</p>
+        </div>
+        <p class="review-author">Jaime Cohen Gaines</p>
+        <p class="review-role">Former Colleague</p>
+        <p class="reference-note">Available as a reference</p>
+      </article>
 
-<div style="text-align: center; padding: 0 48px 80px; max-width: 600px; margin: 0 auto;">
-  <p style="font-family: 'Playfair Display', serif; font-size: 22px; color: var(--dark); margin-bottom: 12px;">Have we worked together?</p>
-  <p style="font-size: 14px; color: var(--mid-gray); line-height: 1.8; margin-bottom: 28px;">If you've worked with me and would like to share your experience, I would love to hear from you. Your words mean more than you know.</p>
-  <a href="mailto:christymcswain@proton.me?subject=I'd love to leave you a review" style="display: inline-block; background: var(--dark); color: var(--white); padding: 14px 32px; border-radius: 2px; text-decoration: none; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.2s;">Say the word and I'll send the link ✦</a>
-</div>
+      <article class="testimonial">
+        <div class="review-text">
+          <p>Working with Christy, both directly and indirectly, was nothing less than an absolute pleasure. Her positive attitude, attention to detail and commitment to the work was endlessly essential to the success of any team she was a part of. I always knew her to be proactive and unafraid of new challenges and opportunities. Her workplace prowess can only be outshined by what an exceptional person she is overall. Along with her patience, her abilities to learn and adapt make her an asset to any endeavor. I have met few individuals as versatile and dedicated as Christy and I have no doubt that she will maintain her consistency in this.</p>
+        </div>
+        <p class="review-author">I.R</p>
+        <p class="review-role">Former Colleague</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="review-cta" aria-label="Leave a review">
+    <h2>Have we worked together?</h2>
+    <p>If you want to share a few words, there is a short review form available. Genuine, specific notes are the most helpful.</p>
+    <div class="cta-actions">
+      <a href="submit-review.html" class="btn-primary">Leave a Review</a>
+      <a href="index.html" class="btn-secondary">Back to Home</a>
+    </div>
+  </section>
+</main>
 
 <footer>
   <p>© 2026 <span>Christy McSwain</span> · christymcswain.pro</p>
