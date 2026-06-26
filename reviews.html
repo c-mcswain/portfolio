@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +24,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   html { scroll-behavior: smooth; }
 
   body {
@@ -234,21 +234,24 @@
     margin-top: 2px;
   }
 
+  .featured-review .review-role { color: var(--mid-gray); }
+
   .featured-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(22px, 2.4vw, 32px);
+    font-size: clamp(20px, 1.9vw, 26px);
     line-height: 1.08;
     color: var(--dark);
     margin-bottom: 12px;
   }
 
   .review-text {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--charcoal);
-    line-height: 1.68;
+    line-height: 1.72;
     font-style: italic;
   }
 
+  .featured-review .review-text { color: var(--charcoal); }
   .review-text p + p { margin-top: 14px; }
 
   .reviews-grid {
@@ -261,7 +264,7 @@
     grid-column: 1 / -1;
     justify-self: center;
     max-width: calc((100% - 18px) / 2);
-    width: 100%;
+   width: 100%;
   }
 
   .testimonial {
@@ -388,7 +391,6 @@
     <span></span><span></span><span></span>
   </div>
 </nav>
-
 <div class="mobile-menu" id="mobile-menu">
   <a href="index.html#projects" onclick="toggleMenu()">Portfolio</a>
   <a href="index.html#skills" onclick="toggleMenu()">Skills</a>
@@ -396,7 +398,6 @@
   <a href="reviews.html" onclick="toggleMenu()">Reviews</a>
   <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
 </div>
-
 <script>
 function toggleMenu() {
   document.getElementById('mobile-menu').classList.toggle('open');
@@ -430,7 +431,7 @@ function toggleMenu() {
     <div class="reviews-grid">
       <article class="testimonial">
         <div class="review-text">
-          <p>I had a very positive experience working with Christy. We were colleagues on a SaaS customer support team. Christy excelled in customer interactions. She has a strong customer-focused skill set, including empathy, problem-solving, and persistence. I remember a specific instance when Christy was handling a case outside of her normal scope, but rather than transfer it, which would extend the client's wait time and create a negative experience, she made the extra effort to identify the proper expert and meet with them to obtain the resolution. Christy is also organized and efficient. Additionally, she was a joy to work with. I always appreciated her passion and her humor.</p>
+          <p>I had a very positive experience working with Christy. We were colleagues on a SaaS customer support team. Christy excelled in customer interactions. She has a strong customer-focused skill set, including empathy, problem-solving, and persistence. I remember a specific instance when Christy was handling a case outside of her normal scope, but rather than transfer it (which would extend the client's wait time and create a negative experience) she made the extra effort to identify the proper expert and meet with them to obtain the resolution. Christy is also organized and efficient. Additionally, she was a joy to work with. I always appreciated her passion and her humor.</p>
         </div>
         <p class="review-author">Jaime Cohen Gaines</p>
         <p class="review-role">Former Colleague</p>
@@ -471,4 +472,3 @@ function toggleMenu() {
 </footer>
 </body>
 </html>
-```
