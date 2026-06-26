@@ -25,7 +25,6 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -235,8 +234,6 @@
     margin-top: 2px;
   }
 
-  .featured-review .review-role { color: var(--mid-gray); }
-
   .featured-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(22px, 2.4vw, 32px);
@@ -252,13 +249,19 @@
     font-style: italic;
   }
 
-  .featured-review .review-text { color: var(--charcoal); }
   .review-text p + p { margin-top: 14px; }
 
   .reviews-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
+  }
+
+  .reviews-grid .testimonial:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: calc((100% - 18px) / 2);
+    width: 100%;
   }
 
   .testimonial {
@@ -345,6 +348,7 @@
   @media (max-width: 820px) {
     .featured-review, .reviews-grid { grid-template-columns: 1fr; }
     .featured-review { gap: 14px; }
+    .reviews-grid .testimonial:last-child:nth-child(odd) { max-width: none; }
   }
 
   @media (max-width: 640px) {
@@ -384,6 +388,7 @@
     <span></span><span></span><span></span>
   </div>
 </nav>
+
 <div class="mobile-menu" id="mobile-menu">
   <a href="index.html#projects" onclick="toggleMenu()">Portfolio</a>
   <a href="index.html#skills" onclick="toggleMenu()">Skills</a>
@@ -391,6 +396,7 @@
   <a href="reviews.html" onclick="toggleMenu()">Reviews</a>
   <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
 </div>
+
 <script>
 function toggleMenu() {
   document.getElementById('mobile-menu').classList.toggle('open');
@@ -438,17 +444,17 @@ function toggleMenu() {
         <p class="review-author">I.R</p>
         <p class="review-role">Former Colleague</p>
       </article>
+
+      <article class="testimonial">
+        <div class="review-text">
+          <p>I had the pleasure of closely working with Christine for about 2 years. During that time I knew her to be a colleague who consistently showed up with enthusiasm, leadership, professionalism, and care. She was a seasoned employee when I started working at the business, and she took me under her wing, of her own accord, and with no benefit to herself besides that she simply wanted to. I cannot recommend her more highly for all potential opportunities within any company.</p>
+        </div>
+        <p class="review-author">Alexandra Helfenbein</p>
+        <p class="review-role">Former Coworker</p>
+        <p class="reference-note">Available as a reference</p>
+      </article>
     </div>
   </section>
-
-  <article class="testimonial">
-  <div class="review-text">
-    <p>I had the pleasure of closely working with Christy for about 2 years. During that time I knew her to be a colleague who consistently showed up with enthusiasm, leadership, professionalism, and care. She was a seasoned employee when I started working at the business, and she took me under her wing, of her own accord, and with no benefit to herself besides that she simply wanted to. I cannot recommend her more highly for all potential opportunities within any company.</p>
-  </div>
-  <p class="review-author">Alexandra Helfenbein</p>
-  <p class="review-role">Former Coworker</p>
-  <p class="reference-note">Available as a reference</p>
-</article>
 
   <section class="review-cta" aria-label="Leave a review">
     <h2>Have we worked together?</h2>
