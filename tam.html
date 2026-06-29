@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Christy McSwain | Technical Account Management</title>
+<title>Christy McSwain | Technical Account Manager</title>
 <meta name="description" content="Technical Account Management portfolio page for Christy McSwain, focused on enterprise SaaS account ownership, adoption, renewals, escalations, and technical customer problem solving.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -86,17 +86,19 @@
   .hero-shell {
     max-width: 1220px;
     margin: 0 auto;
-    padding: 82px 48px 24px;
+    padding: 112px 48px 28px;
   }
 
   .hero {
-    display: grid;
-    grid-template-columns: 150px minmax(0, 1fr);
-    align-items: center;
-    gap: 34px;
+    display: block;
+    text-align: center;
   }
 
-  .hero-text { animation: fadeUp 0.8s ease both; }
+  .hero-text {
+    max-width: 980px;
+    margin: 0 auto;
+    animation: fadeUp 0.8s ease both;
+  }
 
   .hero-eyebrow {
     display: inline-flex;
@@ -109,45 +111,37 @@
     margin-bottom: 16px;
   }
 
-  .hero-name {
+  .hero-role {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 4.2vw, 54px);
+    font-size: clamp(44px, 5vw, 72px);
     font-weight: 700;
     line-height: 0.98;
     color: var(--dark);
-    margin-bottom: 10px;
-  }
-
-  .hero-note {
-    color: var(--sage);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin: 0 0 14px;
+    margin-bottom: 16px;
   }
 
   .hero-title {
     font-size: clamp(17px, 1.75vw, 21px);
     color: var(--ink);
     font-weight: 600;
-    margin-bottom: 14px;
-    max-width: 760px;
+    margin: 0 auto 14px;
+    max-width: 860px;
     line-height: 1.35;
   }
 
   .hero-bio {
     font-size: 14px;
     color: var(--charcoal);
-    max-width: 740px;
+    max-width: 850px;
     line-height: 1.65;
-    margin-bottom: 22px;
+    margin: 0 auto 22px;
   }
 
   .hero-links {
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .btn-primary {
@@ -195,30 +189,6 @@
     color: var(--sage);
     transform: translateY(-2px);
     background: var(--white);
-  }
-
-  .hero-image {
-    animation: fadeUp 0.8s 0.2s ease both;
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .headshot-frame {
-    position: relative;
-    width: 150px;
-    aspect-ratio: 0.78;
-    background: var(--paper);
-    border: 1px solid rgba(31,111,104,0.18);
-    box-shadow: 0 10px 28px rgba(31,39,41,0.08);
-    padding: 7px;
-  }
-
-  .headshot-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    filter: saturate(0.88) contrast(1.02);
   }
 
   section {
@@ -697,8 +667,6 @@
   .mobile-menu a:hover { color: var(--gold); }
 
   @media (max-width: 1080px) {
-    .hero { grid-template-columns: 1fr; gap: 0; }
-    .hero-image { display: none; }
     .projects-grid,
     .testimonial-feature,
     .problems-grid { grid-template-columns: 1fr; }
@@ -713,7 +681,7 @@
   @media (max-width: 768px) {
     .hero-shell { padding: 86px 24px 30px; }
     .hero-eyebrow { display: none; }
-    .hero-name { font-size: clamp(34px, 11vw, 46px); }
+    .hero-role { font-size: clamp(36px, 12vw, 52px); }
     .hero-title { font-size: 15px; }
     .hero-bio { font-size: 14px; line-height: 1.6; }
     nav { padding: 16px 24px; }
@@ -768,16 +736,9 @@
 
 <div class="hero-shell">
   <div class="hero">
-    <div class="hero-image">
-      <div class="headshot-frame">
-        <img src="headshot.jpg" alt="Christy McSwain">
-      </div>
-    </div>
-
     <div class="hero-text">
-      <p class="hero-eyebrow">Technical Account Management · Enterprise SaaS · Customer Operations</p>
-      <h1 class="hero-name">Christy<br>McSwain</h1>
-      <p class="hero-note">Technical Account Management</p>
+      <p class="hero-eyebrow">Enterprise SaaS · Customer Operations · Technical Problem Solving</p>
+      <h1 class="hero-role">Technical Account Manager</h1>
       <p class="hero-title">Owning complex SaaS customer relationships where adoption, renewals, technical problem solving, and executive communication all have to work together.</p>
       <p class="hero-bio">I bring 7+ years across customer success, technical account management, implementation, onboarding, and SaaS operations. My strongest work happens when technical complexity starts affecting people: customers, internal teams, executives, support, product, and engineering. I connect the dots without adding more noise.</p>
 
