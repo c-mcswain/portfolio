@@ -335,7 +335,7 @@
 
   .projects-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
     align-items: stretch;
   }
@@ -344,12 +344,13 @@
     background: var(--white);
     border: 1px solid rgba(31,39,41,0.14);
     border-radius: 8px;
-    padding: 22px 26px 14px;
+    padding: 20px 24px 16px;
     transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    min-height: 280px;
   }
 
   .project-card::before {
@@ -421,7 +422,7 @@
   }
 
   .project-desc {
-    font-size: 13px;
+    font-size: 12.5px;
     color: var(--charcoal);
     line-height: 1.55;
     margin-bottom: 12px;
@@ -429,6 +430,7 @@
 
   .project-features {
     list-style: none;
+    margin-top: auto;
     margin-bottom: 0;
   }
 
@@ -667,10 +669,15 @@
   .mobile-menu a:hover { color: var(--gold); }
 
   @media (max-width: 1080px) {
-    .projects-grid,
     .testimonial-feature,
     .problems-grid { grid-template-columns: 1fr; }
     .proof-strip { grid-template-columns: repeat(2, 1fr); }
+  }
+
+
+  @media (max-width: 860px) {
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card { min-height: auto; }
   }
 
   @media (max-width: 640px) {
